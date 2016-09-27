@@ -1,0 +1,50 @@
+<div class="row" ng-click="login()">
+
+      <div class="col-md-4">
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-info" style="text-align:center;">
+    			Member Details
+        </a>
+        <a class="list-group-item" ng-repeat="x in analysislist" ng-click="navigateNextPage(x)">{{x.name}}</a>
+        <a class="list-group-item">{{budget | currency:"₹"}}</a>
+      </div>
+    </div>
+
+
+    <div class="col-md-4"> 
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-success" style="text-align:center;">
+    			Member Details order by UserId
+        </a>
+        <a class="list-group-item" ng-repeat="x in analysislist | orderBy : 'user_id'" ng-click="navigateNextPage(x)">{{x.name}}</a>
+        <a class="list-group-item"> {{budget | currency}}</a>
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-danger" style="text-align:center;">
+    			Member Details Order By Reverse UserID
+        </a>
+        <a class="list-group-item" ng-repeat="x in analysislist | orderBy : '-user_id'" ng-click="navigateNextPage(x)">{{x.name | lowercase}}
+        </a>
+        <a class="list-group-item">{{budget | currency:"€"}}
+        </a>
+      </div>
+    </div>
+
+</div>
+
+
+<div class="list-group">
+  <a href="#" class="list-group-item active" style="text-align:center;">
+     Selected Member Details 
+   </a>
+   <a class="list-group-item" ng-repeat="x in selectedMemeberDetail">
+    <b>Name :-</b> {{x.name}}<br>
+    <b>Date Of Birth :-</b> {{x.date_of_birth}}<br>
+    <b>Gender :-</b> {{x.sex}}<br>
+    <b>User id :-</b> {{x.user_id}}<br>
+  </a>
+</div>

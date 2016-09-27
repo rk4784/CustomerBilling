@@ -1,0 +1,22 @@
+<div ng-app="mainApp" class="loginLabel z-depth-3 card" ng-controller="loginController">
+	<img src="http://materializecss.com/images/office.jpg" class="loginlogo">
+	<form  name="myForm">
+		<div class="row">
+			<div class="input-field col s12">
+				<input type="email" class="validate" ng-model="email" required />
+				<label for="password">Email</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="password" type="password" class="validate" ng-model="password" required />
+				<label for="password">Password</label>
+			</div>
+		</div>
+		<button class="waves-effect waves-light button primary loginBtn" ng-disabled="myForm.$invalid" ng-click="loginButtonClicked()">Login</button>
+		<a href="#" class="extra-small changePassword">Click here for change password</a> 
+	</form>
+
+</div>
+
+
